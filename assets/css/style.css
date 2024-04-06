@@ -1,0 +1,537 @@
+:root {
+    --Marine-blue: hsl(213, 96%, 18%);
+    --Purplish-blue: hsl(243, 100%, 62%);
+    --Pastel-blue: hsl(228, 100%, 84%);
+    --Light-blue: hsl(206, 94%, 87%);
+    --Strawberry-red: hsl(354, 84%, 57%);
+    --Cool-gray: hsl(231, 11%, 63%);
+    --Light-gray: hsl(229, 24%, 87%);
+    --Magnolia: hsl(217, 100%, 97%);
+    --Alabaster: hsl(231, 100%, 99%);
+    --White: hsl(0, 0%, 100%);
+}
+
+html {
+    height: 100vh;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: var(--Light-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+}
+
+
+.card {
+    width: 60%;
+    height: 70%;
+    background-color: var(--White);
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: calc(100% / 3) auto;
+    gap: 0 10px;
+    padding: 15px;
+    color: var(--White);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 15px;
+    overflow: hidden;
+}
+
+.card .slideBar {
+    background: url(../images/bg-sidebar-desktop.svg) no-repeat;
+    background-size: contain;
+    display: flex;
+    flex-flow: column;
+    gap: 35px;
+    padding: 40px 0 0 30px ;
+}
+
+.card .slideBar div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.card .slideBar div span {
+    outline: 1px solid var(--White);
+    font-weight: 700;
+    border-radius: 50%;
+    padding: 8px 12px ;
+    transition: all .5s ease-in-out;
+}
+
+.card .slideBar div .stepText {
+    display: inline-block;
+}
+
+.card .slideBar div .stepText p {
+    font-size: 15px;
+    margin: 0;
+    font-weight: 400;
+    color: var(--Cool-gray);
+}
+
+.card .slideBar div .stepText h6 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.stepActive span {
+    background-color: var(--Light-blue);
+    color: black;
+    outline: none !important;
+}
+
+
+@media (max-width: 600px ) {
+
+    .card {
+        width: 100%;
+        height: 100%;
+        grid-template-columns: none;
+        grid-template-rows: calc(100% / 4) auto;
+        gap: 10px 0;
+        border-radius: 0px;
+        padding: 0;
+    }
+
+    .card .slideBar {
+        background: url(../images/bg-sidebar-mobile.svg) no-repeat;
+        background-size: cover;
+        flex-flow: row;
+        justify-content: center;
+        gap: 10px;
+        padding: 0 ;
+    }
+
+    .card .slideBar div .stepText {
+        display: none;
+    }
+}
+
+
+/* *************************************************************
+******************************************************
+**********************************************/
+
+
+
+.card .stepDetails {
+    padding: 35px 55px;
+    color: black;
+}
+
+.card .stepDetails > div {
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+}
+
+
+
+.stepDetails .personalInfo .stepDetailsContent  form {
+    padding: 15px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.personalInfo .stepDetailsContent form label {
+    padding: 10px 0;
+    color: var(--Marine-blue);
+}
+
+
+.stepDetails  .stepDetailsText p {
+    color: var(--Cool-gray);
+}
+.stepDetails  .stepDetailsBtns {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.stepDetails div .stepDetailsBtns .next,
+.stepDetails div .stepDetailsBtns .confirm {
+    margin-left: auto;
+    color: var(--White);
+    background-color: var(--Marine-blue);
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    padding: 15px 20px;
+    cursor: pointer;
+}
+
+.stepDetails div .stepDetailsBtns .next:hover,
+.stepDetails div .stepDetailsBtns .confirm:hover
+{
+    transform: scale(1.05);
+}
+.stepDetails div .stepDetailsBtns .next:active,
+.stepDetails div .stepDetailsBtns .confirm:active
+{
+    transform: scale(1);
+}
+
+.stepDetails .stepDetailsBtns .back {
+    color: var(--Cool-gray);
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.stepDetails .stepDetailsBtns .back:hover {
+    font-weight: 600;
+    scale: 1.05;
+    color: var(--Marine-blue);
+
+}
+
+.stepDetails .stepDetailsBtns .back:active {
+    scale: 1;
+}
+
+
+@media (max-width: 600px ) {
+    .card .stepDetails {
+        padding: 20px;
+    }
+}
+
+
+/* ///////////////////// personal info /////////////////////// */
+
+
+.stepDetailsContent form input[type="text"],
+.stepDetailsContent form input[type="tel"],
+.stepDetailsContent form input[type="email"]
+{
+    color: var(--Marine-blue);
+    font-size: 16px;
+    margin-bottom: 20px;
+    border: none;
+    outline: 1px solid var(--Cool-gray);
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.stepDetailsContent form input[type="text"]:focus,
+.stepDetailsContent form input[type="tel"]:focus,
+.stepDetailsContent form input[type="email"]:focus {
+    outline: 2px solid var(--Pastel-blue);
+}
+
+
+/* ///////////////////// select plan /////////////////////// */
+
+
+.selectPlan .stepDetailsContent {
+    padding-top: 15px;
+}
+
+
+.selectPlan form {
+    display: grid !important;
+    grid-template-columns: auto auto auto ;
+    gap: 25px;
+}
+
+.selectPlan form .input-Container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid var(--Cool-gray);
+    border-radius: 10px;
+    position: relative;
+}
+
+.selectPlan form .input-Container .radio-card,
+.selectPlan form .input-Container label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.selectPlan form .input-Container span {
+    color: var(--Marine-blue);
+    font-weight: 500;
+}
+
+
+
+
+.selectPlan form .input-Container input[type="radio"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.selectPlan form .input-Container:has( input[type="radio"]:hover ) {
+    outline: 2px solid var(--Pastel-blue);
+}
+
+.selectPlan form .input-Container:has( input[type="radio"]:checked ) {
+    outline: 2px solid var(--Pastel-blue);
+    background-color: var(--Alabaster);
+}
+
+.selectPlan .stepDetailsContent .payOption {
+    display: flex;
+    gap: 15px;
+    margin: 30px 0;
+    padding: 20px 0;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--Marine-blue);
+    background-color: var(--Alabaster);
+    border-radius: 10px;
+}
+
+
+
+.selectPlan .stepDetailsContent .payOption .Monthly,
+.selectPlan .stepDetailsContent .payOption .Yearly {
+    transition: all .5s ease-in-out;
+}
+
+
+/* Genel stil */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 24px;
+    margin: 10px;
+  }
+  
+  /* Giriş stil */
+  .toggle-switch .toggle-input {
+    display: none;
+  }
+  
+  /* Anahtarın stilinin etrafındaki etiketin stil */
+  .toggle-switch .toggle-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 24px;
+    background-color: var(--Marine-blue);
+    border-radius: 34px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  /* Anahtarın yuvarlak kısmının stil */
+  .toggle-switch .toggle-label::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    background-color: #fff;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+  }
+  
+  /* Anahtarın etkin hale gelmesindeki stil değişiklikleri */
+  .toggle-switch .toggle-input:checked + .toggle-label {
+    background-color: var(--Marine-blue);
+  }
+  
+  .toggle-switch .toggle-input:checked + .toggle-label::before {
+    transform: translateX(16px);
+  }
+  
+  /* Light tema */
+  .toggle-switch.light .toggle-label {
+    background-color: #BEBEBE;
+  }
+  
+  .toggle-switch.light .toggle-input:checked + .toggle-label {
+    background-color: #9B9B9B;
+  }
+  
+  .toggle-switch.light .toggle-input:checked + .toggle-label::before {
+    transform: translateX(6px);
+  }
+  
+
+/* ///////////////////// Add ons /////////////////////// */
+
+
+.addOns .stepDetailsContent {
+    padding: 15px 0;
+}
+
+.addOns .stepDetailsContent form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+.addOns .stepDetailsContent form .checkbox-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid var(--Cool-gray);
+    border-radius: 10px;
+    cursor: pointer;
+}
+.addOns .stepDetailsContent form .checkbox-container div {
+    margin-left: 20px;
+}
+
+.addOns .stepDetailsContent form .checkbox-container h6 {
+    margin: 0 0 5px 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+.addOns .stepDetailsContent form .checkbox-container p {
+    margin: 0;
+    padding: 0;
+    color: var(--Cool-gray);
+}
+
+.addOns .stepDetailsContent form .checkbox-container span {
+    margin-left: auto;
+    color: var(--Purplish-blue);
+    font-weight: 600;
+}
+
+
+.addOns form .checkbox-container:has( input[type="checkbox"]:hover ) {
+    outline: 2px solid var(--Pastel-blue);
+}
+
+.addOns form .checkbox-container:has( input[type="checkbox"]:checked ) {
+    outline: 2px solid var(--Pastel-blue);
+    background-color: var(--Alabaster);
+}
+
+
+/* ///////////////////// summary /////////////////////// */
+
+.summary .stepDetailsContent {
+    padding-top: 15px;
+
+}
+.summary .totalCard {
+    padding: 15px 25px;
+    border-radius: 10px;
+    background-color: var(--Alabaster);
+}
+
+.summary .totalCard .plan {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+.summary .totalCard .plan div h3 {
+    padding: 0;
+    margin: 0;
+    color: var(--Marine-blue);
+    text-transform: capitalize;
+}
+
+.summary .totalCard .plan div span {
+    text-decoration: underline;
+    color: var(--Cool-gray);
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.summary .totalCard .plan div span:hover {
+    color: var(--Marine-blue);
+}
+
+.summary .totalCard .plan span {
+    color: var(--Marine-blue);
+    font-weight: 600;
+}
+
+.summary .totalCard .ons > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.summary .totalCard .ons > div p {
+    color: var(--Cool-gray);
+}
+.summary .totalCard .ons > div span {
+    color: var(--Marine-blue);
+}
+
+.summary .stepDetailsContent .total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
+    padding: 15px 25px;
+}
+
+.summary .stepDetailsContent .total p {
+    color: var(--Cool-gray);
+}
+
+.summary .stepDetailsContent .total span {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--Purplish-blue);
+}
+
+/* ///////////////////// thanks /////////////////////// */
+
+.stepDetails .thanks {
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.stepDetails .thanks .content {
+    display: grid;
+    justify-items: center;
+}
+
+.stepDetails .thanks .content h1 {
+    color: var(--Marine-blue);
+}
+
+.stepDetails .thanks .content p {
+    color: var(--Cool-gray);
+    text-align: center;
+    line-height: 1.7;
+}
+
+
+
+
+
+
+
+/* ********************************************** */
+
+.none {
+    display: none !important;
+}

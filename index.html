@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <title>Frontend Mentor | Multi-step form</title>
+</head>
+<body>
+
+
+    <div class="card">
+      <div class="slideBar">
+        <div class="personalInfo">
+          <span class="setpNum">1</span>
+          <div class="stepText">
+            <p>STEP 1</p>
+            <h6>YOUR INFO</h6>
+          </div>
+        </div>
+        <div class="selectPlan">
+          <span class="setpNum">2</span>
+          <div class="stepText">
+            <p>STEP 2</p>
+            <h6>SELECT PLAN</h6>
+          </div>
+        </div>
+        <div class="addOns">
+          <span class="setpNum">3</span>
+          <div class="stepText">
+            <p>STEP 3</p>
+            <h6>ADD-ONS</h6>
+          </div>
+        </div>
+        <div class="summary">
+          <span class="setpNum">4</span>
+          <div class="stepText">
+            <p>STEP 4</p>
+            <h6>SUMMARY</h6>
+          </div>
+        </div>
+      </div>
+      <div class="stepDetails">
+  
+        <div class="personalInfo">
+          <div class="stepDetailsText">
+            <h1>Personal info</h1>
+            <p>Please provide your name, email address, and phone number.</p>
+          </div>
+          <div class="stepDetailsContent" id="form">
+            <form action="" id="step1">
+              <label for="name">Name</label>
+              <input type="text" id="name" placeholder="Your Name">
+              <label for="email">Email Address</label>
+              <input type="email" name="" id="email" placeholder="example@....">
+              <label for="tel">Phone Number</label>
+              <input type="tel" name="" id="tel" placeholder="00000000000" pattern="[0-9]{11}"> 
+            </form>
+          </div>
+          <div class="stepDetailsBtns"> <button class="next" type="" form="" onclick="buttons.next()">Next Step</button></div>
+          </div>
+  
+        <div class="selectPlan none">
+            <div class="stepDetailsText">
+              <h1>Select your plan</h1>
+              <p>You have the option of monthly or yearly billing</p>
+            </div>
+            <div class="stepDetailsContent" id="form">
+              <form>
+                <div class="input-Container">
+                  <input type="radio" name="plan" id="arcade" value="arcade">
+                  <div class="radio-card">
+                    <img src="assets/images/icon-arcade.svg" alt="">
+                    <label for="arcade">
+                      <h4>Arcade</h4>
+                      <p class="costShow arcade"></p>
+                      <span></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="input-Container">
+                  <input type="radio" name="plan" id="advanced" value="advanced" checked >
+                  <div class="radio-card">
+                    <img src="assets/images/icon-advanced.svg" alt="">
+                    <label for="advanced">
+                      <h4>Advanced</h4>
+                      <p class="costShow advanced"></p>
+                      <span></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="input-Container">
+                  <input type="radio" name="plan" id="pro" value="pro">
+                  <div class="radio-card">
+                    <img src="assets/images/icon-pro.svg" alt="">
+                    <label for="pro">
+                      <h4>Pro</h4>
+                      <p class="costShow pro"></p>
+                      <span></span>
+                    </label>
+                  </div>
+                </div>
+              </form>
+              <div class="payOption">
+                <div class="Monthly" style="font-weight: 600;">Monthly</div>
+                <div class="toggle-switch">
+                  <input class="toggle-input" id="toggle" type="checkbox">
+                  <label class="toggle-label" for="toggle" onclick="buttons.changePlan()"></label>
+                </div>
+                <div class="Yearly">Yearly</div>
+              </div>
+            </div>
+            <div class="stepDetailsBtns"><span class="back" onclick="buttons.prev()">Go Back</span> <button class="next" onclick="buttons.next()">Next Step</button></div>
+          </div>
+  
+        <div class="addOns none">
+              <div class="stepDetailsText">
+                <h1>Pick add-ons</h1>
+                <p>Add-ons help enhance your gaming experience.</p>
+              </div>
+              <div class="stepDetailsContent" id="form">
+                <form action="">
+                  <label for="OnlineService" class="checkbox-container" >
+                    <input type="checkbox" name="ons" id="OnlineService" >
+                    <div>
+                      <h6>Online service</h6>
+                      <p>Access to multiplayer games</p>
+                    </div>
+                    <span class="costShow OnlineService"></span>
+                  </label>
+                  <label for="LargerStorage" class="checkbox-container">
+                    <input type="checkbox" name="ons" id="LargerStorage" >
+                    <div>
+                      <h6>Larger storage
+                      </h6>
+                      <p>Extra 1TB of cloud save</p>
+                    </div>
+                    <span class="costShow LargerStorage"></span>
+                  </label>
+                  <label for="CustomizableProfile" class="checkbox-container">
+                    <input type="checkbox" name="ons" id="CustomizableProfile" >
+                    <div>
+                      <h6>Customizable Profile</h6>
+                      <p>Custom theme on your profile</p>
+                    </div>
+                    <span class="costShow CustomizableProfile"></span>
+                  </label>
+                </form>
+              </div>
+              <div class="stepDetailsBtns"><span class="back" onclick="buttons.prev()">Go Back</span> <button class="next" onclick="buttons.next()">Next Step</button></div>
+          </div>
+  
+        <div class="summary none">
+                <div class="stepDetailsText">
+                  <h1>Finishing up</h1>
+                  <p>Double-check everything looks OK before confirming.</p>
+                </div>
+                <div class="stepDetailsContent" id="form">
+                  <div class="totalCard">
+                    <div class="plan">
+                      <div>
+                        <h3 id="userPlan" class="finishing"></h3>
+                        <span onclick="buttons.change()">change</span>
+                      </div>
+                      <span id="userPlanCost" class="finishing"></span>
+                    </div>
+                    <hr>
+                    <div class="ons">
+                      <div>
+                        <p id="ons1" class="finishing"></p>
+                        <span id="ons1Cost" class="finishing"></span>
+                      </div>
+                      <div>
+                        <p id="ons2" class="finishing"></p>
+                        <span id="ons2Cost" class="finishing"></span>
+                      </div>
+                      <div>
+                        <p id="ons3" class="finishing"></p>
+                        <span id="ons3Cost" class="finishing"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="total">
+                    <p id="totalPer" class="finishing"></p>
+                    <span id="totalCost" class="finishing"></span>
+                  </div>
+                </div>
+                <div class="stepDetailsBtns"><span class="back" onclick="buttons.prev()">Go Back</span> <button class="confirm" onclick="buttons.confirm()">Confirm</button></div>
+          </div>
+  
+          <div class="thanks none">
+            <div class="content">
+              <img src="assets/images/icon-thank-you.svg" alt="">
+              <h1>Thank you!</h1>
+              <p>Thanks for confirming your subscription! We hope you have fun 
+                using our platform. If you ever need support, please feel free 
+                to email us at support@loremgaming.com.</p>
+            </div>
+          </div>
+  
+      </div>
+    </div>
+  
+  
+  <script src="assets/js/main.js"></script>
+  </body>
+</html>
